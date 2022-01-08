@@ -3303,7 +3303,7 @@ others:
       type: switch
       data-type: bool
       default: false
-      description: "启用后，文章页打开时会自动检测百度收录情况，并显示状态文字（目前相关api为原作者M酷自己搭建的服务，不能保证稳定性）"
+      description: "启用后，文章页打开时会自动检测百度收录情况，并显示状态文字（目前相关api为邱少羽梦自己搭建的服务，不能保证稳定性）"
       options:
         - value: true
           label: 开启

@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<p align="center">Joe2.0 Halo 主题 邱少修改版</p>
+<p align="center">Joe 主题 Halo 移植版</p>
 
 <p class="badge-row" align="center">
   <a href="https://halo.run" target="_blank">
@@ -44,12 +44,6 @@
 ![浅色模式](https://cdn.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_light.png) -->
 
 <br>
-
-### 邱少羽梦修改内容
-1. 添加点击量以及访客量的统计，支持今日统计
-2. 添加留言板模版以及关于博主模版
-3. 修改部分样式布局，修改部分代码逻辑，优化部分功能
-
 
 ### 🌈 安装 & 更新
 
@@ -567,20 +561,3 @@ location / {
 - [halo-live2d](https://github.com/LIlGG/halo-live2d)
 - [halo-comment-sakura](https://github.com/LIlGG/halo-comment-sakura)
 - [halo-theme-sagari](https://github.com/cetr/halo-theme-sagiri)
-
-
-
-
-#### 分享者信息
-
-1. 分享者邮箱: qiushaocloud@126.com
-2. [分享者博客](https://www.qiushaocloud.top)
-3. [分享者自己搭建的 gitlab](https://www.qiushaocloud.top/gitlab/qiushaocloud) 
-3. [分享者 gitee](https://gitee.com/qiushaocloud/dashboard/projects) 
-3. [分享者 github](https://github.com/qiushaocloud?tab=repositories) 
-
-### 版权信息公告:
-* 此主题是基于 [qinhua/halo-theme-joe2.0](https://github.com/qinhua/halo-theme-joe2.0) 修改
-* 以下内容大部分为原作者原创内容
-* 如果大家喜欢，请支持 [邱少羽梦(修改者)](https://www.qiushaocloud.top)，也请支持下原作者哦
-* 版权归原作者所有，修改者只是进行部分修改，以满足修改者需求

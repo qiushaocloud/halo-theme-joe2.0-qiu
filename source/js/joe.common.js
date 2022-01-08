@@ -192,15 +192,30 @@ const commonContext = {
 	initBaidu() {
 		if (!ThemeConfig.check_baidu_collect || !$("#joe_baidu_record").length)
 			return;
+
+		var currDate = new Date();
+		var currYear = currDate.getFullYear();
+		var currMonth = currDate.getMonth() + 1;
+		var currDay = currDate.getDate();
+		var currFormatDay = currYear
+			+ '-' + (currMonth < 10 ? '0'+currMonth : currMonth)
+			+ '-' + (currDay < 10 ? '0'+currDay : currDay);
+
+		var recordOkFormatDay = window.localStorage.getItem('qiushaocloud_baidu_record_ok_format_day:'+window.location.href);
+		if (recordOkFormatDay && recordOkFormatDay === currFormatDay) {
+			$("#joe_baidu_record").css("color", "#03a9f4").html("今日已推送收录");
+			return;
+		}
+
 		$.ajax({
-			url: ThemeConfig.BASE_URL + "/halo-api/bd/iscollect",
+			url: 'https://api.dzzui.com/api/baidusl',
 			type: "GET",
 			dataType: "json",
 			data: {
 				url: window.location.href,
 			},
 			success(res) {
-				if (res.data && res.data.collected) {
+				if (typeof res === 'object' && res.code === 1) {
 					$("#joe_baidu_record").css("color", "#67c23a").html("已收录");
 				} else {
 					/* 如果填写了Token，则自动推送给百度 */
@@ -208,24 +223,23 @@ const commonContext = {
 						$("#joe_baidu_record").html(
 							"<span style=\"color: #e6a23c\">未收录，推送中...</span>"
 						);
+
 						const _timer = setTimeout(function () {
 							$.ajax({
-								url: ThemeConfig.BASE_URL + "/halo-api/bd/push",
+								url:ThemeConfig.BASE_URL+"/proxy_baidu/urls?site="+ThemeConfig.blog_url+"&token="+ThemeConfig.baidu_token,
 								type: "POST",
-								dataType: "json",
-								data: {
-									site: ThemeConfig.blog_url,
-									token: ThemeConfig.baidu_token,
-									urls: window.location.href,
-								},
+								// dataType: "json",
+								data: window.location.href,
 								success(res) {
-									if (res.data.success === 0) {
-										$("#joe_baidu_record").html(
-											"<span style=\"color: #f56c6c\">推送失败，请检查！</span>"
-										);
-									} else {
+									if (typeof res === 'object' && res.success === 1) {
 										$("#joe_baidu_record").html(
 											"<span style=\"color: #67c23a\">推送成功！</span>"
+										);
+
+										window.localStorage.setItem('qiushaocloud_baidu_record_ok_format_day:'+window.location.href, currFormatDay);
+									} else {
+										$("#joe_baidu_record").html(
+											"<span style=\"color: #f56c6c\">推送失败，请检查！</span>"
 										);
 									}
 								},
