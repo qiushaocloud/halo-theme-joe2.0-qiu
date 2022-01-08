@@ -1,13 +1,13 @@
-id: joe2.0
-name: Joe2.0
+id: joe2.0-qiu
+name: Joe2.0-qiu
 author:
-  name: M酷
-  website: https://bbchin.com
-description: Halo主题 Joe2.0
-logo: https://bbchin.com/logo
-website: https://bbchin.com
-repo: https://github.com/qinhua/halo-theme-joe2.0
-cover: https://cdn.jsdelivr.net/gh/qinhua/halo-theme-joe2.0@master/source/img/dp/welcome.jpg
+  name: 邱少羽梦 改(主题原作者 M酷)
+  website: https://www.qiushaocloud.top
+description: Halo主题 Joe2.0(邱少修改版)
+logo: https://www.qiushaocloud.top/logo
+website: https://www.qiushaocloud.top
+repo: https://github.com/qiushaocloud/halo-theme-joe2.0-qiu
+cover: https://cdn.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/welcome.jpg
 version: 1.0.8
 require: ^1.4.11
 # 文章页 meta 变量

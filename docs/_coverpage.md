@@ -1,4 +1,4 @@
-<img src="https://cdn.jsdelivr.net/gh/qinhua/halo-theme-joe2.0@master/source/img/logo.png" style="width:6vw;min-width:90px;" alt="Joe2.0">
+<img src="https://cdn.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/logo.png" style="width:6vw;min-width:90px;" alt="Joe2.0">
 
 <!-- # **Joe2.0** -->
 
@@ -8,5 +8,5 @@
 - Freemarker 渲染
 - 浅色/暗黑模式切换
 
-[GitHub](https://github.com/qinhua/halo-theme-joe2.0)
+[GitHub](https://github.com/qiushaocloud/halo-theme-joe2.0-qiu)
 [马上开始](#readme)

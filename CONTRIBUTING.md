@@ -37,7 +37,7 @@ git push origin {BRANCH_NAME}
 #### 7. 更新主仓库代码到自己的仓库
 
 ```bash
-git remote add upstream https://github.com/qinhua/halo-theme-joe2.0.git
+git remote add upstream https://github.com/qiushaocloud/halo-theme-joe2.0-qiu.git
 
 git pull upstream master
 
