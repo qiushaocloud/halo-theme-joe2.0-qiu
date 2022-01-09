@@ -21,13 +21,29 @@
   if (joeEle) {
     var styleEle = document.createElement('style');
     styleEle.innerHTML = `
+      .joe_list__item {
+        margin: 10px 0;
+        background-color: rgb(58 57 57 / 32%);
+      }
+
+      html[data-mode="light"] .joe_list__item .meta .categories .pcate .link,
+      html[data-mode="light"] .joe_list__item .information .abstract {
+        color: rgb(118 116 115);
+      }
+
+      html[data-mode="light"] .joe_archive {
+        background: rgb(158 158 158 / 21%);
+      }
+
+      html[data-mode="light"] .joe_list__item .meta {
+        color: rgb(233 235 239);
+      }
+
       @media (min-width: 1200px) {
         .joe_list__item {
           width: 49%;
           padding: 15px 0;
           float: left;
-          margin: 10px 0;
-          background-color: rgb(58 57 57 / 32%);
         }
 
         .joe_list__item:nth-child(2n) {

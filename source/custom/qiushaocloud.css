@@ -239,6 +239,10 @@ html[data-mode="light"] .joe_header__above-logo .user-name {
   text-align: left;
 }
 
+.joe_list__item .information .abstract {
+  -webkit-line-clamp: 3;
+  max-height: 66px;
+}
 
 
 /** 文章内容 */

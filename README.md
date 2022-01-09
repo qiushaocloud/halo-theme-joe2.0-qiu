@@ -581,6 +581,6 @@ location / {
 
 ### 版权信息公告:
 * 此主题是基于 [qinhua/halo-theme-joe2.0](https://github.com/qinhua/halo-theme-joe2.0) 修改
-* 以下内容大部分为原作者原创内容
+* 以上内容大部分为原作者原创内容
 * 如果大家喜欢，请支持 [邱少羽梦(修改者)](https://www.qiushaocloud.top)，也请支持下原作者哦
 * 版权归原作者所有，修改者只是进行部分修改，以满足修改者需求
