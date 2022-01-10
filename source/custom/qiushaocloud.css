@@ -231,9 +231,9 @@ html[data-mode="light"] .joe_header__above-logo .user-name {
   text-shadow: -1px -1px 1px #d1cccb, 2px 2px 1px #575960;
 }
 
-.joe_index__banner .swiper-container .item .thumbnail {
+/* .joe_index__banner .swiper-container .item .thumbnail {
   object-fit: revert;
-}
+} */
 
 .joe_header__above-nav .joe_dropdown__menu {
   text-align: left;
