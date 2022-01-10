@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
-<meta name="keywords" content="${meta_keywords!}">
+<meta name="keywords" content="${meta_keywords!},${options.seo_keywords!},${options.seo_description!},${user.nickname!},${user.description!}">
 <meta name="description" content="${meta_description!}">
 <meta name="author" content="${user.nickname!}">
 <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -14,6 +14,9 @@
 <!-- OG -->
 <meta property="og:image" content="${options.blog_favicon!}">
 <meta property="og:description" content="${meta_description!}">
+<meta property="og:user_description" content="${user.description!}">
+<meta property="og:seo_keywords" content="${options.seo_keywords!}">
+<meta property="og:seo_description" content="${options.seo_description!}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="${blog_title!}">
