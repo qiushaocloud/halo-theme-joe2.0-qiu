@@ -244,6 +244,10 @@ html[data-mode="light"] .joe_header__above-logo .user-name {
   max-height: 66px;
 }
 
+.force-show-block {
+  display: block !important;
+}
+
 
 /** 文章内容 */
 .joe_detail__article.indent>p span[data-fancybox] img{

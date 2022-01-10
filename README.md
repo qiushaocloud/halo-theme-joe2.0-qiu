@@ -49,7 +49,34 @@
 1. 添加点击量以及访客量的统计，支持今日统计
 2. 添加留言板模版以及关于博主模版
 3. 修改部分样式布局，修改部分代码逻辑，优化部分功能
+4. 添加 font-awesome，加入常用的 note 标签
+```
+  <div class="note info">这里是 info 标签样式</div>
 
+  <div class="note info no-icon">这里是不带符号的 info 标签样式</div>
+
+  <div class="note primary">这里是 primary 标签样式</div>
+
+  <div class="note primary no-icon">这里是不带符号的 primary 标签样式</div>
+
+  <div class="note warning">这里是 warning 标签样式</div>
+
+  <div class="note warning no-icon">这里是不带符号的 warning 标签样式</div>
+
+  <div class="note danger">这里是 danger 标签样式</div>
+
+  <div class="note danger no-icon">这里是不带符号的 danger 标签样式</div>
+```
+<div class="force-show-block" style="display: none;" >
+  <div class="note info">这里是 info 标签样式</div>
+  <div class="note info no-icon">这里是不带符号的 info 标签样式</div>
+  <div class="note primary">这里是 primary 标签样式</div>
+  <div class="note primary no-icon">这里是不带符号的 primary 标签样式</div>
+  <div class="note warning">这里是 warning 标签样式</div>
+  <div class="note warning no-icon">这里是不带符号的 warning 标签样式</div>
+  <div class="note danger">这里是 danger 标签样式</div>
+  <div class="note danger no-icon">这里是不带符号的 danger 标签样式</div>
+</div>
 
 ### 🌈 安装 & 更新
 
