@@ -8,7 +8,9 @@
     <div class="joe_aside__item-contain">
       <@postTag method="latest" top="${settings.newest_page_size!5}">
         <#if posts?size gt 0>
-          <ul class="list">       
+          <ul class="list">
+            <#assign exclude_categorie_slugs=settings.exclude_categorie_slugs!''>
+                   
             <#list posts?sort_by("editTime")?reverse as post>
               <#assign first_categorie=post.categories[0]!>
 
