@@ -3136,14 +3136,14 @@ comment:
       name: comment_author_poptext
       label: "提示文案（输入昵称时）"
       type: text
-      default: "输入QQ号将自动拉取昵称和头像"
+      default: "输入QQ号将自动拉取昵称和头像 ♪(´▽｀)"
       placeholder: 请输入
       description: "填写昵称时的提示文字"
     comment_email_poptext:
       name: comment_email_poptext
       label: "提示文案（输入邮箱时）"
       type: text
-      default: "你将收到回复通知"
+      default: "您的邮箱将收到回复通知 ๑乛◡乛๑"
       placeholder: 请输入
       description: "填写邮箱时的提示文字"
     comment_avatar_error:
@@ -3166,7 +3166,7 @@ comment:
       type: text
       default: "暂无评论"
       placeholder: 请输入
-      description: "没有评论数据时显示的文字"
+      description: "还没有评论哦，快来抢占沙发 ♪(´▽｀)"
 
 # 自定义
 custom:
