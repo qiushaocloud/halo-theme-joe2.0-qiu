@@ -631,7 +631,7 @@ const commentApi = {};
 commentApi.createComment = (target, comment) => {
   const commentCp = Object.assign({}, comment); // FIXME QiuShaoCloud 后台目前没提供头像字段，暂时用 content 来存
 
-  if (comment.avatar) commentCp.content = comment.avatar + '###QIU###' + comment.content;
+  if (comment.avatar) commentCp.content = comment.avatar + '###QIUSHAOCLOUD###' + comment.content;
   return utils_service({
     url: `${baseUrl}/${target}/comments`,
     method: 'post',
