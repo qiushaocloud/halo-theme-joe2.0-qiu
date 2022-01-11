@@ -629,9 +629,9 @@ const baseUrl = '/api/content';
 const commentApi = {};
 
 commentApi.createComment = (target, comment) => {
-  const commentCp = Object.assign({}, comment);
-  commentCp.authorUrl = comment.authorUrl + '###QIU###' + comment.avatar; //后台目前没提供头像字段，暂时用authorUrl来存
+  const commentCp = Object.assign({}, comment); // FIXME QiuShaoCloud 后台目前没提供头像字段，暂时用 content 来存
 
+  if (comment.avatar) commentCp.content = comment.avatar + '###QIU###' + comment.content;
   return utils_service({
     url: `${baseUrl}/${target}/comments`,
     method: 'post',
@@ -3630,12 +3630,12 @@ if ($defineProperty) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CommentEditor.vue?vue&type=template&id=03353d60&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CommentEditor.vue?vue&type=template&id=1e6c6ecc&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isCurrReply)?_c('section',{ref:"editor",staticClass:"comment-editor",attrs:{"id":_vm.respondId,"role":"form"}},[(_vm.isReply)?_c('h3',{staticClass:"comment-reply-title",attrs:{"id":"reply-title"}},[_c('small',[_c('a',{staticClass:"cancel-comment-reply-link",attrs:{"href":"javascript:;"},on:{"click":_vm.cancelReply}},[_vm._v("取消回复")])])]):_vm._e(),_c('form',{staticClass:"comment-form"},[(!_vm.previewMode)?_c('div',{staticClass:"comment-textarea"},[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.comment.content),expression:"comment.content"}],staticClass:"commentbody",attrs:{"required":"required","aria-required":"true","tabindex":"4","placeholder":_vm.configs.aWord || '欢迎您，请点击此处，动动您的小手指，留下您的👣  ...'},domProps:{"value":(_vm.comment.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.comment, "content", $event.target.value)}}}),_c('label',{staticClass:"input-label"},[_vm._v(_vm._s(_vm.configs.aWord || "欢迎您，请点击此处，动动您的小手指，留下您的👣 ..."))])]):_c('div',{staticClass:"comment-preview markdown-body",domProps:{"innerHTML":_vm._s(_vm.renderedContent)}}),_c('div',{attrs:{"id":"upload-img-show"}}),_c('p',{staticClass:"no-select",attrs:{"id":"emotion-toggle"}},[_c('span',{on:{"click":_vm.handleToggleDialogEmoji}},[_vm._v(_vm._s(!_vm.emojiDialogVisible ? "戳这里哦，宝宝给您表演表情包 OωO" : "喜欢宝宝的表演吧 ヾ(≧∇≦*)ゝ"))])]),_c('transition',{attrs:{"name":"emoji-fade"}},[(_vm.emojiDialogVisible)?_c('VEmojiPicker',{attrs:{"pack":_vm.emojiPack},on:{"select":_vm.handleSelectEmoji}}):_vm._e()],1),_c('div',{staticClass:"author-info"},[_c('div',{staticClass:"commentator"},[_c('img',{staticClass:"avatar",attrs:{"src":_vm.avatar},on:{"error":_vm.handleAvatarError}}),_c('div',{staticClass:"socila-check",class:[_vm.checkType.back]},[_c('i',{class:[_vm.checkType.icon],attrs:{"aria-hidden":"true"}})])]),_c('PopupInput',{staticClass:"cmt-popup cmt-author",attrs:{"popupStyle":"margin-left: -115px","popupText":_vm.configs.authorPopup || '输入QQ号将自动拉取昵称和头像 ♪(´▽｀)',"inputType":"text","placeholder":"* 昵称","id":"author"},on:{"blurInput":_vm.pullInfo},model:{value:(_vm.comment.author),callback:function ($$v) {_vm.$set(_vm.comment, "author", $$v)},expression:"comment.author"}}),_c('PopupInput',{staticClass:"cmt-popup",attrs:{"popupStyle":"margin-left: -65px;","popupText":_vm.configs.emailPopup || '您的邮箱将收到回复通知 ๑乛◡乛๑',"inputType":"text","placeholder":"* 电子邮件","id":"email"},on:{"blurInput":_vm.pullInfo},model:{value:(_vm.comment.email),callback:function ($$v) {_vm.$set(_vm.comment, "email", $$v)},expression:"comment.email"}}),_c('PopupInput',{staticClass:"cmt-popup",attrs:{"popupStyle":"margin-left: -55px;","popupText":_vm.configs.urlPopup || '请不要打小广告哦 (^し^)',"inputType":"text","placeholder":"个人站点","id":"url"},model:{value:(_vm.comment.authorUrl),callback:function ($$v) {_vm.$set(_vm.comment, "authorUrl", $$v)},expression:"comment.authorUrl"}})],1),_c('ul',{staticClass:"comment-buttons"},[(_vm.comment.content)?_c('li',{staticClass:"middle",staticStyle:{"margin-right":"5px"}},[_c('a',{staticClass:"button-preview-edit",attrs:{"href":"javascript:;","rel":"nofollow noopener"},on:{"click":_vm.handlePreviewContent}},[_vm._v(_vm._s(_vm.previewMode ? "编辑" : "预览"))])]):_vm._e(),_c('li',{staticClass:"middle"},[_c('a',{staticClass:"button-submit",attrs:{"href":"javascript:;","tabindex":"5","rel":"nofollow noopener"},on:{"click":_vm.handleSubmitClick}},[_vm._v("提交")])])])],1)]):_vm._e()}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/CommentEditor.vue?vue&type=template&id=03353d60&
+// CONCATENATED MODULE: ./src/components/CommentEditor.vue?vue&type=template&id=1e6c6ecc&
 
 // EXTERNAL MODULE: external "Vue"
 var external_Vue_ = __webpack_require__("8bbf");
@@ -4658,10 +4658,9 @@ function loop() {
         this.$tips("评论内容不能为空", 5000, this);
         return;
       } // Submit the comment
-      // this.comment.authorUrl = this.comment.authorUrl+'###QIU###'+this.avatar; //后台目前没提供头像字段，暂时用authorUrl来存
 
 
-      this.comment.avatar = this.avatar;
+      if (!this.comment.avatar) this.comment.avatar = this.avatar;
       this.comment.postId = this.targetId;
 
       if (this.replyComment) {
@@ -5951,14 +5950,14 @@ var addStylesShadow = __webpack_require__("35d6");
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Comment.vue?vue&type=template&id=d4853c90&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Comment.vue?vue&type=template&id=61d3e86a&shadow
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[
     'halo-comment',
     { 'halo-comment__small': _vm.mergedConfigs.size === 'small' } ],attrs:{"id":"halo-comment"}},[(_vm.isReply)?_c('comment-editor',{staticClass:"bottom-comment",attrs:{"targetId":_vm.id,"target":_vm.target,"options":_vm.mergedOptions,"configs":_vm.mergedConfigs}}):_vm._e(),(!_vm.mergedConfigs.autoLoad && !_vm.loaded)?_c('div',{staticClass:"comment-load-button"},[_c('a',{staticClass:"button-load",attrs:{"href":"javascript:void(0)","rel":"nofollow noopener"},on:{"click":_vm.loadComments}},[_vm._v("加载评论")])]):_vm._e(),_c('comment-loading',{directives:[{name:"show",rawName:"v-show",value:(_vm.commentLoading),expression:"commentLoading"}],attrs:{"configs":_vm.mergedConfigs}}),(_vm.comments.length >= 1)?_c('ul',{staticClass:"commentwrap"},[_vm._l((_vm.comments),function(comment,index){return [_c('CommentNode',{key:index,attrs:{"targetId":_vm.id,"target":_vm.target,"comment":comment,"options":_vm.mergedOptions,"configs":_vm.mergedConfigs,"depth":1}})]})],2):_vm._e(),(_vm.loaded && !_vm.commentLoading && _vm.comments.length <= 0)?_c('div',{staticClass:"comment-empty"},[_vm._v(" "+_vm._s(_vm.mergedConfigs.notComment || "还没有评论哦，快来抢占沙发 ♪(´▽｀)")+" ")]):_vm._e(),(_vm.pagination.pages > 1)?_c('div',{staticClass:"comment-page"},[_c('pagination',{attrs:{"page":_vm.pagination.page,"size":_vm.pagination.size,"total":_vm.pagination.total},on:{"change":_vm.handlePaginationChange}})],1):_vm._e()],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Comment.vue?vue&type=template&id=d4853c90&shadow
+// CONCATENATED MODULE: ./src/components/Comment.vue?vue&type=template&id=61d3e86a&shadow
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.error.cause.js
 var es_error_cause = __webpack_require__("d9e2");
@@ -8132,7 +8131,18 @@ external_Vue_default.a.use(plugins_Tips);
       this.comments = [];
       this.commentLoading = true;
       comment["a" /* default */].listComments(this.target, this.id, "tree_view", this.pagination).then(async response => {
-        this.comments = response.data.data.content;
+        console.error(response);
+        this.comments = response.data.data.content; // FIXME QiuShaoCloud 后台目前没提供头像字段，暂时用 content 来存
+
+        for (const comment of this.comments) {
+          const contentArr = (comment.content || '').split('###QIUSHAOCLOUD###');
+
+          if (contentArr.length) {
+            comment.avatarFromContent = contentArr[0];
+            comment.content = contentArr[1] || '';
+          }
+        }
+
         this.pagination.size = response.data.data.rpp;
         this.pagination.total = response.data.data.total;
         this.pagination.pages = response.data.data.pages;
@@ -14768,12 +14778,12 @@ module.exports = function (key) {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CommentNode.vue?vue&type=template&id=04d34075&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CommentNode.vue?vue&type=template&id=67917918&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"comment-wrp"},[_c('li',{staticClass:"comment",class:_vm.commentClass,attrs:{"id":'comment-' + _vm.comment.id,"itemtype":"http://schema.org/Comment","itemprop":"comment"}},[_c('div',{staticClass:"contents"},[_c('div',{staticClass:"main shadow"},[_c('div',{staticClass:"profile"},[_c('a',{attrs:{"href":_vm.comment.authorUrl,"rel":"nofollow noopener noreferrer","target":"_blank"}},[_c('img',{directives:[{name:"lazy",rawName:"v-lazy",value:(_vm.comment.isAdmin ? _vm.options.blog_logo : _vm.avatar),expression:"comment.isAdmin ? options.blog_logo : avatar"}],staticClass:"avatar",attrs:{"alt":_vm.comment.author,"height":"80","width":"80"},on:{"error":_vm.handleAvatarError}})])]),_c('div',{staticClass:"commentinfo"},[_c('section',{staticClass:"commeta"},[_c('div',{staticClass:"left"},[_c('h4',{staticClass:"author"},[_c('a',{attrs:{"href":_vm.comment.authorUrl,"rel":"nofollow noopener noreferrer","target":"_blank"}},[_c('img',{directives:[{name:"lazy",rawName:"v-lazy",value:(_vm.comment.isAdmin ? _vm.options.blog_logo : _vm.avatar),expression:"comment.isAdmin ? options.blog_logo : avatar"}],staticClass:"avatar",attrs:{"alt":_vm.comment.author,"height":"24","width":"24"},on:{"error":_vm.handleAvatarError}}),(_vm.comment.isAdmin)?_c('span',{staticClass:"bb-comment isauthor",attrs:{"title":"博主"}},[_vm._v("博主")]):_vm._e(),_vm._v(" "+_vm._s(_vm.comment.author)+" ")])])]),_c('a',{staticClass:"comment-reply-link",style:(_vm.editing ? 'display:block;' : ''),attrs:{"href":"javascript:;"},on:{"click":_vm.handleReplyClick}},[_vm._v("回复")]),_c('div',{staticClass:"right"},[_c('div',{staticClass:"info"},[_c('time',{staticClass:"comment-time",attrs:{"itemprop":"datePublished","datetime":_vm.comment.createTime}},[_vm._v("发布于 "+_vm._s(_vm.createTimeAgo)+" ")]),(_vm.configs.showUserAgent)?_c('span',{staticClass:"useragent-info",domProps:{"innerHTML":_vm._s(_vm.compileUserAgent)}}):_vm._e()])])])]),_c('div',{staticClass:"body markdown-body"},[_c('div',{staticClass:"markdown-content",domProps:{"innerHTML":_vm._s(_vm.compileContent)}})])])]),(_vm.comment.children)?_c('ul',{staticClass:"children"},[_vm._l((_vm.comment.children),function(children,index){return [_c('CommentNode',{key:index,attrs:{"isChild":true,"targetId":_vm.targetId,"target":_vm.target,"comment":children,"options":_vm.options,"configs":_vm.configs,"depth":_vm.selfAddDepth,"parent":_vm.comment}})]})],2):_vm._e()]),_c('CommentEditor',{attrs:{"targetId":_vm.targetId,"target":_vm.target,"replyComment":_vm.comment,"options":_vm.options,"configs":_vm.configs}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/CommentNode.vue?vue&type=template&id=04d34075&
+// CONCATENATED MODULE: ./src/components/CommentNode.vue?vue&type=template&id=67917918&
 
 // EXTERNAL MODULE: ./src/components/index.js + 10 modules
 var components = __webpack_require__("2af9");
@@ -14991,10 +15001,14 @@ var globals = __webpack_require__("0e4d");
       console.error('qgssstest this.comment.avatar', this.comment); // if (this.comment.avatar) {
       //   return this.comment.avatar;
       // } else {
-      // !!优先从主题配置取，取不到才从后台配置取
 
-      const gravatarSource = this.configs.gravatarSource || this.options.gravatar_source || this.configs.gravatarSourceDefault;
-      return `${gravatarSource}/${this.comment.gravatarMd5}?s=256&d=${this.options.comment_gravatar_default}`; // }
+      if (this.comment.avatarFromContent) {
+        return this.comment.avatarFromContent;
+      } else {
+        // !!优先从主题配置取，取不到才从后台配置取
+        const gravatarSource = this.configs.gravatarSource || this.options.gravatar_source || this.configs.gravatarSourceDefault;
+        return `${gravatarSource}/${this.comment.gravatarMd5}?s=256&d=${this.options.comment_gravatar_default}`;
+      }
     },
 
     compileContent() {
