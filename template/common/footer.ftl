@@ -71,7 +71,7 @@
               <script>
                 window.localStorage.setItem('qiushaocloud_sitecounter_api_host', '${settings.site_counter_api_host!""}');
               </script>
-              <script async type="text/javascript" src="${theme_base}/source/custom/min/qiushaocloud_site_counter.min.js"></script>
+              <script async type="text/javascript" src="${BASE_RES_URL}/source/custom/min/qiushaocloud_site_counter.min.js"></script>
             </div>
           </#if>
         </div>

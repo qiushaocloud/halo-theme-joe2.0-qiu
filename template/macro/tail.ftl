@@ -20,7 +20,7 @@
   </#if>
   <#if settings.enable_clean_mode != true && ( type == 'post' || type == 'journals' || type == 'sheet')>
     <script src="${BASE_RES_URL!}/source/lib/vue@2.6.10/vue.min.js"></script>
-    <script src="${theme_base!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>
+    <script src="${BASE_RES_URL!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>
   </#if>
   <script src="${BASE_RES_URL!}/source/lib/fancybox/jquery.fancybox.min.js"></script>
   <#if settings.enable_aside == true && settings.enable_music_player == true && settings.music_id?? && settings.music_id?trim!= ''>
@@ -57,11 +57,10 @@
   </#if>
 
   <#-- ===== 引入页面级js start ===== -->
-  <script src="${theme_base}/source/js/min/joe.common.min.js?v=${theme.version!}"></script>
+  <script src="${BASE_RES_URL}/source/js/min/joe.common.min.js?v=${theme.version!}"></script>
 
   <#if type == 'index'>
-    <#--  <script src="${BASE_RES_URL}/source/js/min/joe.index.min.js?v=${theme.version!}"></script>  -->
-    <script src="${theme_base}/source/js/min/joe.index.min.js?v=${theme.version!}"></script>
+    <script src="${BASE_RES_URL}/source/js/min/joe.index.min.js?v=${theme.version!}"></script>
   </#if>
   <#if type == 'archives'>
     <script src="${BASE_RES_URL}/source/js/min/joe.archives.min.js?v=${theme.version!}"></script>
