@@ -629,10 +629,13 @@ const baseUrl = '/api/content';
 const commentApi = {};
 
 commentApi.createComment = (target, comment) => {
+  const commentCp = Object.assign({}, comment);
+  commentCp.authorUrl = comment.authorUrl + '###QIU###' + comment.avatar; //后台目前没提供头像字段，暂时用authorUrl来存
+
   return utils_service({
     url: `${baseUrl}/${target}/comments`,
     method: 'post',
-    data: comment
+    data: commentCp
   });
 };
 
@@ -3627,12 +3630,12 @@ if ($defineProperty) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CommentEditor.vue?vue&type=template&id=e613a4ba&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"93979ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CommentEditor.vue?vue&type=template&id=03353d60&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isCurrReply)?_c('section',{ref:"editor",staticClass:"comment-editor",attrs:{"id":_vm.respondId,"role":"form"}},[(_vm.isReply)?_c('h3',{staticClass:"comment-reply-title",attrs:{"id":"reply-title"}},[_c('small',[_c('a',{staticClass:"cancel-comment-reply-link",attrs:{"href":"javascript:;"},on:{"click":_vm.cancelReply}},[_vm._v("取消回复")])])]):_vm._e(),_c('form',{staticClass:"comment-form"},[(!_vm.previewMode)?_c('div',{staticClass:"comment-textarea"},[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.comment.content),expression:"comment.content"}],staticClass:"commentbody",attrs:{"required":"required","aria-required":"true","tabindex":"4","placeholder":_vm.configs.aWord || '欢迎您，请点击此处，动动您的小手指，留下您的👣  ...'},domProps:{"value":(_vm.comment.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.comment, "content", $event.target.value)}}}),_c('label',{staticClass:"input-label"},[_vm._v(_vm._s(_vm.configs.aWord || "欢迎您，请点击此处，动动您的小手指，留下您的👣 ..."))])]):_c('div',{staticClass:"comment-preview markdown-body",domProps:{"innerHTML":_vm._s(_vm.renderedContent)}}),_c('div',{attrs:{"id":"upload-img-show"}}),_c('p',{staticClass:"no-select",attrs:{"id":"emotion-toggle"}},[_c('span',{on:{"click":_vm.handleToggleDialogEmoji}},[_vm._v(_vm._s(!_vm.emojiDialogVisible ? "戳这里哦，宝宝给您表演表情包 OωO" : "喜欢宝宝的表演吧 ヾ(≧∇≦*)ゝ"))])]),_c('transition',{attrs:{"name":"emoji-fade"}},[(_vm.emojiDialogVisible)?_c('VEmojiPicker',{attrs:{"pack":_vm.emojiPack},on:{"select":_vm.handleSelectEmoji}}):_vm._e()],1),_c('div',{staticClass:"author-info"},[_c('div',{staticClass:"commentator"},[_c('img',{staticClass:"avatar",attrs:{"src":_vm.avatar},on:{"error":_vm.handleAvatarError}}),_c('div',{staticClass:"socila-check",class:[_vm.checkType.back]},[_c('i',{class:[_vm.checkType.icon],attrs:{"aria-hidden":"true"}})])]),_c('PopupInput',{staticClass:"cmt-popup cmt-author",attrs:{"popupStyle":"margin-left: -115px","popupText":_vm.configs.authorPopup || '输入QQ号将自动拉取昵称和头像 ♪(´▽｀)',"inputType":"text","placeholder":"* 昵称","id":"author"},on:{"blurInput":_vm.pullInfo},model:{value:(_vm.comment.author),callback:function ($$v) {_vm.$set(_vm.comment, "author", $$v)},expression:"comment.author"}}),_c('PopupInput',{staticClass:"cmt-popup",attrs:{"popupStyle":"margin-left: -65px;","popupText":_vm.configs.emailPopup || '您的邮箱将收到回复通知 ๑乛◡乛๑',"inputType":"text","placeholder":"* 电子邮件","id":"email"},on:{"blurInput":_vm.pullInfo},model:{value:(_vm.comment.email),callback:function ($$v) {_vm.$set(_vm.comment, "email", $$v)},expression:"comment.email"}}),_c('PopupInput',{staticClass:"cmt-popup",attrs:{"popupStyle":"margin-left: -55px;","popupText":_vm.configs.urlPopup || '请不要打小广告哦 (^し^)',"inputType":"text","placeholder":"个人站点","id":"url"},model:{value:(_vm.comment.authorUrl),callback:function ($$v) {_vm.$set(_vm.comment, "authorUrl", $$v)},expression:"comment.authorUrl"}})],1),_c('ul',{staticClass:"comment-buttons"},[(_vm.comment.content)?_c('li',{staticClass:"middle",staticStyle:{"margin-right":"5px"}},[_c('a',{staticClass:"button-preview-edit",attrs:{"href":"javascript:;","rel":"nofollow noopener"},on:{"click":_vm.handlePreviewContent}},[_vm._v(_vm._s(_vm.previewMode ? "编辑" : "预览"))])]):_vm._e(),_c('li',{staticClass:"middle"},[_c('a',{staticClass:"button-submit",attrs:{"href":"javascript:;","tabindex":"5","rel":"nofollow noopener"},on:{"click":_vm.handleSubmitClick}},[_vm._v("提交")])])])],1)]):_vm._e()}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/CommentEditor.vue?vue&type=template&id=e613a4ba&
+// CONCATENATED MODULE: ./src/components/CommentEditor.vue?vue&type=template&id=03353d60&
 
 // EXTERNAL MODULE: external "Vue"
 var external_Vue_ = __webpack_require__("8bbf");
@@ -4617,9 +4620,9 @@ function loop() {
 
   created() {
     // Get info from local storage
-    var author = localStorage.getItem("comment-author");
-    var authorUrl = localStorage.getItem("comment-authorUrl");
-    var email = localStorage.getItem("comment-email");
+    var author = localStorage.getItem("qiushaocloud-halo-comment-author");
+    var authorUrl = localStorage.getItem("qiushaocloud-halo-comment-authorUrl");
+    var email = localStorage.getItem("qiushaocloud-halo-comment-email");
     this.comment.author = author ? author : "";
     this.comment.authorUrl = authorUrl || "";
     this.comment.avatar = this.avatar;
@@ -4636,7 +4639,7 @@ function loop() {
 
   methods: {
     updateAvatar() {
-      var avatar = localStorage.getItem("avatar");
+      var avatar = localStorage.getItem("qiushaocloud-halo-comment-avatar");
       this.avatar = avatar ? avatar : this.pullGravatarInfo(true);
     },
 
@@ -4654,11 +4657,9 @@ function loop() {
       if (Object(util["b" /* isEmpty */])(this.comment.content)) {
         this.$tips("评论内容不能为空", 5000, this);
         return;
-      }
+      } // Submit the comment
+      // this.comment.authorUrl = this.comment.authorUrl+'###QIU###'+this.avatar; //后台目前没提供头像字段，暂时用authorUrl来存
 
-      console.error('qgstest this', this);
-      console.error('qgstest this.comment', this.comment); // Submit the comment
-      // this.comment.authorUrl = this.avatar; //后台目前没提供头像字段，暂时用authorUrl来存
 
       this.comment.avatar = this.avatar;
       this.comment.postId = this.targetId;
@@ -4670,10 +4671,10 @@ function loop() {
 
       api_comment["a" /* default */].createComment(this.target, this.comment).then(response => {
         // Store comment author, email, authorUrl
-        localStorage.setItem("comment-author", this.comment.author);
-        localStorage.setItem("comment-email", this.comment.email);
-        localStorage.setItem("comment-authorUrl", this.comment.authorUrl);
-        localStorage.setItem("avatar", this.avatar); // clear comment
+        localStorage.setItem("qiushaocloud-halo-comment-author", this.comment.author);
+        localStorage.setItem("qiushaocloud-halo-comment-email", this.comment.email);
+        localStorage.setItem("qiushaocloud-halo-comment-authorUrl", this.comment.authorUrl);
+        localStorage.setItem("qiushaocloud-halo-comment-avatar", this.comment.avatar); // clear comment
 
         this.comment.content = "";
         this.previewMode = false;
