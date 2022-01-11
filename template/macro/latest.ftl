@@ -9,12 +9,12 @@
       <@postTag method="latest" top="${settings.newest_page_size!5}">
         <#if posts?size gt 0>
           <ul class="list">
-            <#assign exclude_categorie_slugs=settings.exclude_categorie_slugs!''>
-                   
-            <#list posts?sort_by("editTime")?reverse as post>
-              <#assign first_categorie=post.categories[0]!>
+            <#--  <#assign exclude_categorie_slugs=settings.exclude_categorie_slugs!''>  -->
 
-              <#if first_categorie??>
+            <#list posts?sort_by("editTime")?reverse as post>
+              <#--  <#assign first_categorie=post.categories[0]!>  -->
+
+              <#--  <#if first_categorie??>
                 <#assign first_categorie_slug=first_categorie.slug!''>
 
                 <#if (first_categorie_slug != '' && exclude_categorie_slugs != '' && (exclude_categorie_slugs == first_categorie_slug || exclude_categorie_slugs?index_of(','+first_categorie_slug) != -1 || exclude_categorie_slugs?index_of(first_categorie_slug+',') != -1)) == false >
@@ -28,7 +28,11 @@
                   <a class="link" href="${post.fullPath!}" title="${post.title!}">${post.title!}</a>
                   <i class="joe-font joe-icon-link"></i>
                 </li>
-              </#if>
+              </#if>  -->
+               <li class="item">
+                <a class="link" href="${post.fullPath!}" title="${post.title!}">${post.title!}</a>
+                <i class="joe-font joe-icon-link"></i>
+              </li>
             </#list>
           </ul>
         <#else>
