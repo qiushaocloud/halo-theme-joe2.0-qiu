@@ -631,11 +631,22 @@ const commentApi = {};
 commentApi.createComment = (target, comment) => {
   const commentCp = Object.assign({}, comment); // FIXME QiuShaoCloud 后台目前没提供头像字段，暂时用 content 来存
 
-  if (comment.avatar) commentCp.content = comment.avatar + '###QIUSHAOCLOUD###' + comment.content;
+  if (comment.avatar) commentCp.content = window.encodeURIComponent(comment.avatar) + '###QIUSHAOCLOUD###' + comment.content;
   return utils_service({
     url: `${baseUrl}/${target}/comments`,
     method: 'post',
     data: commentCp
+  }).then(response => {
+    const comment = response.data.data; // FIXME QiuShaoCloud 后台目前没提供头像字段，暂时用 content 来存
+
+    const contentArr = (comment.content || '').split('###QIUSHAOCLOUD###');
+
+    if (contentArr.length >= 2) {
+      comment.avatarFromContent = window.decodeURIComponent(contentArr[0]);
+      comment.content = contentArr[1] || '';
+    }
+
+    return response;
   });
 };
 
@@ -644,6 +655,17 @@ commentApi.listComments = (target, targetId, view = 'tree_view', pagination) => 
     url: `${baseUrl}/${target}/${targetId}/comments/${view}`,
     params: pagination,
     method: 'get'
+  }).then(response => {
+    const comments = response.data.data.content; // FIXME QiuShaoCloud 后台目前没提供头像字段，暂时用 content 来存
+
+    for (const comment of comments) {
+      const contentArr = (comment.content || '').split('###QIUSHAOCLOUD###');
+
+      if (contentArr.length >= 2) {
+        comment.avatarFromContent = window.decodeURIComponent(contentArr[0]);
+        comment.content = contentArr[1] || '';
+      }
+    }
   });
 };
 
