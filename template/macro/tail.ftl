@@ -20,8 +20,9 @@
   </#if>
   <#if settings.enable_clean_mode != true && ( type == 'post' || type == 'journals' || type == 'sheet')>
     <script src="${BASE_RES_URL!}/source/lib/vue@2.6.10/vue.min.js"></script>
-    <script src="${BASE_RES_URL!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>
+    <#--  <script src="${BASE_RES_URL!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>  -->
     <#--  <script src="${theme_base!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>  -->
+    <script src="https://cdn.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/dist/halo-comment.min.js?v=${theme.version!}"></script>
   </#if>
   <script src="${BASE_RES_URL!}/source/lib/fancybox/jquery.fancybox.min.js"></script>
   <#if settings.enable_aside == true && settings.enable_music_player == true && settings.music_id?? && settings.music_id?trim!= ''>
