@@ -10,10 +10,23 @@
         <#if posts?size gt 0>
           <ul class="list">       
             <#list posts?sort_by("editTime")?reverse as post>
-              <li class="item">
-                <a class="link" href="${post.fullPath!}" title="${post.title!}">${post.title!}</a>
-                <i class="joe-font joe-icon-link"></i>
-              </li>
+              <#assign first_categorie=post.categories[0]!>
+
+              <#if first_categorie??>
+                <#assign first_categorie_slug=first_categorie.slug!''>
+
+                <#if (first_categorie_slug != '' && exclude_categorie_slugs != '' && (exclude_categorie_slugs == first_categorie_slug || exclude_categorie_slugs?index_of(','+first_categorie_slug) != -1 || exclude_categorie_slugs?index_of(first_categorie_slug+',') != -1)) == false >
+                  <li class="item">
+                    <a class="link" href="${post.fullPath!}" title="${post.title!}">${post.title!}</a>
+                    <i class="joe-font joe-icon-link"></i>
+                  </li>
+                </#if>
+              <#else>
+                <li class="item">
+                  <a class="link" href="${post.fullPath!}" title="${post.title!}">${post.title!}</a>
+                  <i class="joe-font joe-icon-link"></i>
+                </li>
+              </#if>
             </#list>
           </ul>
         <#else>
