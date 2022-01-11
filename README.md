@@ -49,7 +49,8 @@
 1. 添加点击量以及访客量的统计，支持今日统计
 2. 添加留言板模版以及关于博主模版
 3. 修改部分样式布局，修改部分代码逻辑，优化部分功能
-4. 添加 font-awesome，加入常用的 note 标签
+4. 修改评论组件，修改后的评论组件仓库地址: [https://github.com/qiushaocloud/halo-comment-joe2.0-qiu](https://github.com/qiushaocloud/halo-comment-joe2.0-qiu)
+5. 添加 font-awesome，加入常用的 note 标签
 ```
   <div class="note info">这里是 info 标签样式</div>
 
