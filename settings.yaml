@@ -3116,7 +3116,7 @@ comment:
       label: 是否允许上传头像
       type: switch
       data-type: bool
-      default: false
+      default: true
       description: "点击头像框上传自定义头像【注：因为使用的是「即库图床」上传的头像，头像会在该地址(https://img.78al.net/index/gallery.html)上被所有人看到】"
       options:
         - value: true
