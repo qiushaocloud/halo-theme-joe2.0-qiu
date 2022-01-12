@@ -3104,8 +3104,20 @@ comment:
       label: 展示评论者UA信息
       type: switch
       data-type: bool
-      default: false
+      default: true
       description: "用来控制全局评论组件中是否展示评论者的UA信息（浏览器、操作系统等）"
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_comment_upload_avatar:
+      name: enable_comment_upload_avatar
+      label: 是否允许上传头像
+      type: switch
+      data-type: bool
+      default: false
+      description: "点击头像框上传自定义头像【注：因为使用的是「即库图床」上传的头像，头像会在该地址(https://img.78al.net/index/gallery.html)上被所有人看到】"
       options:
         - value: true
           label: 开启
@@ -3129,14 +3141,14 @@ comment:
       name: comment_aword
       label: "评论框内的一言"
       type: text
-      default: "你是我一生只会遇见一次的惊喜 ..."
+      default: "欢迎您，请点击此处，动动您的小手指，留下您的👣  ..."
       placeholder: 请输入
       description: "输入内容时展示的的一言内容"
     comment_author_poptext:
       name: comment_author_poptext
       label: "提示文案（输入昵称时）"
       type: text
-      default: "输入QQ号将自动拉取昵称和头像 ♪(´▽｀)"
+      default: "点击头像框可以上传您的头像，或者您输入QQ号将自动拉取昵称和头像 ♪(´▽｀)"
       placeholder: 请输入
       description: "填写昵称时的提示文字"
     comment_email_poptext:
