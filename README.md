@@ -32,6 +32,8 @@
 
 #### 👀 [预览主题](https://www.qiushaocloud.top)
 
+#### 👀 [有疑问或者功能需求，请点击此处前往](https://www.qiushaocloud.top/2022/01/10/joe20halozhu-ti-qiu-shao-xiu-gai-ban.html)
+
 📗 [使用文档](https://qinhua.github.io/halo-theme-joe2.0)
 
 <br>
