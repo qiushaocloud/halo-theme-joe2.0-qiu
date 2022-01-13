@@ -108,6 +108,7 @@ html[data-mode="light"] .joe_footer {
 
 .joe_index__hot-list.hotlist .item .link .inner .title {
   font-size: 23px;
+  position: initial;
 }
 
 @media (max-width: 1400px) {

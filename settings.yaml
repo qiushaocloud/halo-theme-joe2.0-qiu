@@ -1266,7 +1266,7 @@ home:
       name: random_img_api
       label: 随机图 API
       type: text
-      default: "https://tu.ltyuanfang.cn/api/fengjing.php"
+      default: "https://api.yimian.xyz/img?type=wallpaper"
       description: "自定义随机图API，用于填充没有设置封面的 “文章|分类|标签”，为空则使用默认随机图 API，免费 API 不会一直可用，请知悉"
     exclude_categorie_slugs:
       name: exclude_categorie_slugs
@@ -3118,6 +3118,18 @@ comment:
       data-type: bool
       default: true
       description: "点击头像框上传自定义头像【注：因为使用的是「即库图床」上传的头像，头像会在该地址(https://img.78al.net/index/gallery.html)上被所有人看到】"
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_comment_ip_location:
+      name: enable_comment_ip_location
+      label: 展示评论者地理位置
+      type: switch
+      data-type: bool
+      default: true
+      description: "用来控制全局评论组件中是否展示评论者的「地址位置」"
       options:
         - value: true
           label: 开启
