@@ -226,7 +226,7 @@ const commonContext = {
 
 						const _timer = setTimeout(function () {
 							$.ajax({
-								url:ThemeConfig.BASE_URL+"/proxy_baidu/urls?site="+ThemeConfig.blog_url+"&token="+ThemeConfig.baidu_token,
+								url:ThemeConfig.BASE_URL+"/proxy_api/baidu_record_urls?site="+ThemeConfig.blog_url+"&token="+ThemeConfig.baidu_token,
 								type: "POST",
 								// dataType: "json",
 								data: window.location.href,
