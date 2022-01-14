@@ -59,7 +59,8 @@
   </#if>
 
   <#-- ===== 引入页面级js start ===== -->
-  <script src="${BASE_RES_URL}/source/js/min/joe.common.min.js?v=${theme.version!}"></script>
+  <#--  <script src="${BASE_RES_URL}/source/js/min/joe.common.min.js?v=${theme.version!}"></script>  -->
+  <script src="${theme_base!}/source/js/min/joe.common.min.js?v=${theme.version!}"></script>
 
   <#if type == 'index'>
     <script src="${BASE_RES_URL}/source/js/min/joe.index.min.js?v=${theme.version!}"></script>
