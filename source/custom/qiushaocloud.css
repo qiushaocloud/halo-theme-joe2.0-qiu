@@ -11,6 +11,7 @@ html[data-mode="light"] .joe_leaving-list {
 
 .joe_leaving-list .item .wrapper .content {
   height: auto;
+  max-height: 200px;
 }
 
 .joe_detail .joe_detail__title.qiushaocloud-text-shadow {
