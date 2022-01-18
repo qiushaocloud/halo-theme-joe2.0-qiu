@@ -9,9 +9,13 @@ html[data-mode="light"] .joe_leaving-list {
   background: url("./img/message_bg.jpeg") repeat;
 }
 
-.joe_leaving-list .item .wrapper .content {
+.joe_leaving-list .item .wrapper .content.leaving-content {
   height: auto;
   max-height: 200px;
+}
+
+.joe_leaving-list .item .wrapper .content.leaving-content::-webkit-scrollbar {
+  width: 2px;
 }
 
 .joe_detail .joe_detail__title.qiushaocloud-text-shadow {
@@ -30,6 +34,8 @@ html[data-mode="light"] .joe_detail .joe_detail__title.qiushaocloud-text-shadow 
 
 .joe_leaving-list .item {
   display: none !important;
+  max-width: 300px;
+  width: auto;
 }
 
 html[data-mode="dark"] .joe_leaving-list .item {
