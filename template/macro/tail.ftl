@@ -79,7 +79,8 @@
   </#if>
   <#if type == 'sheet'>
     <script src="${BASE_RES_URL}/source/lib/draggabilly/draggabilly.min.js"></script>
-    <script src="${BASE_RES_URL}/source/js/min/joe.leaving.min.js?v=${theme.version!}"></script>
+    <#--  <script src="${BASE_RES_URL}/source/js/min/joe.leaving.min.js?v=${theme.version!}"></script>  -->
+    <script src="${theme_base}/source/js/min/joe.leaving.min.js?v=${theme.version!}"></script>
   </#if>
   <#--  <#if settings.enable_pjax!false>
     <script src="${BASE_RES_URL}/source/lib/jquery-pjax/jquery.pjax.min.js"></script>
