@@ -14,6 +14,39 @@ const leavingContext = {
 			.then((res) => {
 				if (res.total) {
 					const str = res.content.reduce((sum, item) => {
+						const resComment = item;
+						const contentTmp =  (resComment.content || '').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+						const contentArr = contentTmp.split('<i style="display: none;" class="qiushaocloud_comment_extra_json">');
+						if (contentArr && contentArr.length >= 2) {
+							resComment.content = contentArr[0] || '';
+							const extraJsonStr = contentArr[1];
+							if (extraJsonStr) {
+								try{
+									const {
+										avatar: avatarFromContent,
+										ip: cacheSelfIp,
+										location: cacheSelfLocation
+									} = JSON.parse(window.decodeURIComponent(extraJsonStr.substring(0, extraJsonStr.lastIndexOf('</i>'))));
+			
+									resComment.avatarFromContent = avatarFromContent;
+			
+									if (resComment.ipAddress === cacheSelfIp)
+										resComment.ipLocation = cacheSelfLocation;
+								}catch(err){
+									console.error('JSON.parse catch err:', err, contentArr, resComment);
+								}
+							}
+						}
+				
+						const childrenArr = resComment.children;
+						if (childrenArr && Array.isArray(childrenArr) && childrenArr.length) {
+							for (const childrenComment of childrenArr) {
+								formatResComment(childrenComment);
+								if (!childrenComment.children)
+									childrenComment.children = [];
+							}
+						}
+
 						if (item.content.trim()) {
 							// 渲染留言中的 emoji
 							const markedHtml = marked(item.content)
@@ -22,9 +55,11 @@ const leavingContext = {
 							const emoji = Utils.renderedEmojiHtml(markedHtml);
 							item.content = Utils.return2Br(emoji);
 						}
-						const avatar = `${
+						
+						const avatar = item.avatarFromContent || (`${
 							ThemeConfig.gravatar_source || ThemeConfig.gravatar_source_url
-						}/${item.gravatarMd5}?s=256&d=${ThemeConfig.gravatar_type}`;
+						}/${item.gravatarMd5}?s=256&d=${ThemeConfig.gravatar_type}`);
+
 						return (sum += `<li class="item">
             <div class="user">
                 <img class="avatar lazyload" src="${
