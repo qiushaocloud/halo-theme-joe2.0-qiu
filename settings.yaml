@@ -2541,7 +2541,7 @@ social:
       label: Github
       type: text
       defaut: ""
-      # default: "https://github.com/qinhua"
+      # default: "https://github.com/qiushaocloud"
       placeholder: "github主页地址"
       placeholder: "邮箱地址"
     gitee:
@@ -2549,7 +2549,7 @@ social:
       label: Gitee
       type: text
       defaut: ""
-      # default: "https://gitee.com/duider"
+      # default: "https://gitee.com/qiushaocloud"
       placeholder: "gitee主页地址"
     zhihu:
       name: zhihu
@@ -2569,28 +2569,27 @@ social:
       label: 掘金
       type: text
       defaut: ""
-      # default: "https://juejin.cn/user/817692384432407"
+      # default: "https://juejin.cn/user/xxxx"
       placeholder: "掘金主页地址"
     bilibili:
       name: bilibili
       label: B站
       type: text
       defaut: ""
-      # default: "https://space.bilibili.com/89927969"
+      # default: "https://space.bilibili.com/xxxx"
       placeholder: "B站主页地址"
     qq:
       name: qq
       label: QQ
       type: text
       defaut: ""
-      # default: "352484005"
+      # default: "824477423"
       placeholder: "QQ号"
     weibo:
       name: weibo
       label: 微博
       type: text
       defaut: ""
-      # default: "https://weibo.com/duider"
       placeholder: "微博主页地址"
     custome_social_channel:
       name: custome_social_channel
