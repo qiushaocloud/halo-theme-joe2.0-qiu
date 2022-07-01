@@ -22,7 +22,7 @@
     <script src="${BASE_RES_URL!}/source/lib/vue@2.6.10/vue.min.js"></script>
     <#--  <script src="${BASE_RES_URL!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>  -->
     <script src="${theme_base!}/source/lib/halo-comment/halo-comment.min.js?v=${theme.version!}"></script>
-    <#--  <script src="https://cdn.staticaly.com/gh/qiushaocloud/halo-comment-joe2.0-qiu@master/dist/halo-comment.min.js?v=${theme.version!}"></script>  -->
+    <#--  <script src="https://originfastly.jsdelivr.net/gh/qiushaocloud/halo-comment-joe2.0-qiu@master/dist/halo-comment.min.js?v=${theme.version!}"></script>  -->
   </#if>
   <script src="${BASE_RES_URL!}/source/lib/fancybox/jquery.fancybox.min.js"></script>
   <#if settings.enable_aside == true && settings.enable_music_player == true && settings.music_id?? && settings.music_id?trim!= ''>
