@@ -1,7 +1,7 @@
 <#macro link type>
   <link rel="shortcut icon" size="32x32" href="${options.blog_favicon!}">
   <link rel="canonical" href="${blog_url!}">
-  <link rel="dns-prefetch" href="https://fastly.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://gcore.jsdelivr.net">
   <link rel="apple-touch-icon" sizes="180x180" href="${options.blog_favicon!}">
   <#include "key_css.ftl">
   <#if settings.enable_loading_bar!true>
