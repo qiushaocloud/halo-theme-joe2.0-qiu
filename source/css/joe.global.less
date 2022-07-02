@@ -2502,8 +2502,14 @@ body {
 
           .info {
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
             justify-content: space-between;
+            line-height: 30px;
+
+            .avatar {
+              width: 30px;
+              height: 30px;
+            }
 
             .author {
               color: var(--main);
@@ -2512,6 +2518,7 @@ body {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
+              flex: 1;
             }
 
             .date {

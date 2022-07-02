@@ -64,19 +64,28 @@
                 <li class="item">
                   <div class="user">
                     <div class="info">
+                      <img
+                        id='asideCommentReplyAvatar-${comment.id}'
+                        class="avatar lazyload"
+                        src="${settings.lazyload_avatar}"
+                        data-src="${options.gravatar_source!}/${comment.gravatarMd5!}?s=256&d=${options.comment_gravatar_default!"mm"}"
+                        alt="用户头像"
+                        onerror="this.src='${settings.comment_avatar_error}'"
+                      />
                       <div class="author">${comment.author!}</div>
                       <span class="date">${comment.createTime?string("yyyy-MM-dd")}</span>
                     </div>
                   </div>
                   <div class="reply">
-                    <a id='asideCommentReply-${comment.id}' class="link aside-reply-content" href="${comment.post.fullPath}">${comment.content!}</a>
+                    <a id='asideCommentReplyContent-${comment.id}' class="link aside-reply-content" href="${comment.post.fullPath}">${comment.content!}</a>
                     <script>
                         (function(){
-                          var asideCommentReplyEle = document.getElementById('asideCommentReply-${comment.id}');
-                          if (!asideCommentReplyEle)
+                          var asideCommentReplyContentEle = document.getElementById('asideCommentReplyContent-${comment.id}');
+                          var asideCommentReplyAvatarEle = document.getElementById('asideCommentReplyAvatar-${comment.id}');
+                          if (!asideCommentReplyContentEle)
                             return;
 
-                          var commentContent = asideCommentReplyEle.innerText;
+                          var commentContent = asideCommentReplyContentEle.innerText;
 						              var contentArr = commentContent.split('<i style="display: none;" class="qiushaocloud_comment_extra_json">');
                           var commentAvatar = '';
                           if (contentArr && contentArr.length >= 2) {
@@ -91,7 +100,10 @@
                               }
                             }
                           }
-                          asideCommentReplyEle.innerHTML = commentContent;
+                          asideCommentReplyContentEle.innerHTML = commentContent;
+                          if (commentAvatar && asideCommentReplyAvatarEle) {
+                            asideCommentReplyAvatarEle.src = commentAvatar;
+                          }
                         })();
                       </script>
                   </div>
