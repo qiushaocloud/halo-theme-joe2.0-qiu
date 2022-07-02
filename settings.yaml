@@ -3189,7 +3189,21 @@ comment:
       type: text
       default: "暂无评论"
       placeholder: 请输入
-      description: "还没有评论哦，快来抢占沙发 ♪(´▽｀)"
+      description: "请填写文案，当没有评论时才会显示哦，比如：还没有评论哦，快来抢占沙发 ♪(´▽｀)"
+    comment_blog_author_email:
+      name: comment_blog_author_email
+      label: 博主邮箱
+      type: text
+      default: ""
+      placeholder: 请输入博主邮箱，例如：qiushaocloud@126.com
+      description: "设置博主邮箱，则允许博主在博客中进行评论、删除、回复，如果没有授权，则需要进行登录授权"
+    comment_blog_admin_user_name:
+      name: comment_blog_admin_user_name
+      label: 博客管理的用户名
+      type: text
+      default: ""
+      placeholder: 请输入博客管理的用户名，比如：qiushaocloud
+      description: "博客管理的用户名，配置后进行登录时免输入用户名"
 
 # 自定义
 custom:

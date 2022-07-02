@@ -4368,7 +4368,7 @@ var render = function render() {
       "popupStyle": "margin-left: -65px;",
       "popupText": _vm.configs.emailPopup || '您的邮箱将收到回复通知 ๑乛◡乛๑',
       "inputType": "text",
-      "placeholder": "* 电子邮件",
+      "placeholder": "* 邮箱",
       "id": "email",
       "localStorageDataCacheKey": "qiushaocloud-halo-comment-email"
     },
