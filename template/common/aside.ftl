@@ -69,7 +69,7 @@
                     </div>
                   </div>
                   <div class="reply">
-                    <a class="link aside-reply-content" href="${comment.post.fullPath}/#${comment.id}">${comment.content!}</a>
+                    <a class="link aside-reply-content" href="${comment.post.fullPath}">${comment.content!}</a>
                   </div>
                 </li>
               </#list>
