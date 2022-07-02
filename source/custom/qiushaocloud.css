@@ -12,6 +12,8 @@ html[data-mode="light"] .joe_leaving-list {
 .joe_leaving-list .item .wrapper .content.leaving-content {
   height: auto;
   max-height: 200px;
+  white-space: pre-line;
+  word-break: break-all;
 }
 
 .joe_leaving-list .item .wrapper .content.leaving-content::-webkit-scrollbar {
