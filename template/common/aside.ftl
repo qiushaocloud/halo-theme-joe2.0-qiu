@@ -69,7 +69,31 @@
                     </div>
                   </div>
                   <div class="reply">
-                    <a class="link aside-reply-content" href="${comment.post.fullPath}">${comment.content!}</a>
+                    <a id='asideCommentReply-${comment.id}' class="link aside-reply-content" href="${comment.post.fullPath}">${comment.content!}</a>
+                    <script>
+                        (function(){
+                          var asideCommentReplyEle = document.getElementById('asideCommentReply-${comment.id}');
+                          if (!asideCommentReplyEle)
+                            return;
+
+                          var commentContent = asideCommentReplyEle.innerText;
+						              var contentArr = commentContent.split('<i style="display: none;" class="qiushaocloud_comment_extra_json">');
+                          var commentAvatar = '';
+                          if (contentArr && contentArr.length >= 2) {
+                            commentContent = contentArr[0];
+                            var extraJsonStr = contentArr[1];
+                            if (extraJsonStr) {
+                              try{
+                                var extraData = JSON.parse(window.decodeURIComponent(extraJsonStr.substring(0, extraJsonStr.lastIndexOf('</i>'))));
+                                commentAvatar = extraData.avatar;
+                              }catch(err){
+                                console.error('JSON.parse catch err:', err, contentArr);
+                              }
+                            }
+                          }
+                          asideCommentReplyEle.innerHTML = commentContent;
+                        })();
+                      </script>
                   </div>
                 </li>
               </#list>
