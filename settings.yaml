@@ -3190,13 +3190,27 @@ comment:
       default: "暂无评论"
       placeholder: 请输入
       description: "请填写文案，当没有评论时才会显示哦，比如：还没有评论哦，快来抢占沙发 ♪(´▽｀)"
+    comment_blog_author_nickname:
+      name: comment_blog_author_nickname
+      label: 博主昵称
+      type: text
+      default: ""
+      placeholder: 请输入博主昵称，例如：邱少羽梦
+      description: "设置博主昵称，当输入博主昵称时则自动输入 [博主邮箱] 和 [博主站点]"
+    comment_blog_author_site:
+      name: comment_blog_author_site
+      label: 博主站点
+      type: text
+      default: ""
+      placeholder: 请输入博主站点，例如：https://www.qiushaocloud.top
+      description: "设置博主站点，当输入博主昵称时则自动输入 [博主邮箱] 和 [博主昵称]"
     comment_blog_author_email:
       name: comment_blog_author_email
       label: 博主邮箱
       type: text
       default: ""
       placeholder: 请输入博主邮箱，例如：qiushaocloud@126.com
-      description: "设置博主邮箱，则允许博主在博客中进行评论、删除、回复，如果没有授权，则需要进行登录授权"
+      description: "设置博主邮箱，则允许博主在博客中进行评论、删除、回复，如果没有授权，则需要进行登录授权，另外输入博主邮箱时则自动输入 [博主站点] 和 [博主昵称]"
     comment_blog_admin_user_name:
       name: comment_blog_admin_user_name
       label: 博客管理的用户名

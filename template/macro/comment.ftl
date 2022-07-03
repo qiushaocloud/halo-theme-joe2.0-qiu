@@ -18,6 +18,8 @@
       "avatarLoading": "${settings.comment_avatar_loading!}",
       "avatarError": "${settings.comment_avatar_error!}",
       "notComment": "${settings.comment_empty_text!}",
+      "blogAuthorNickname": "${settings.comment_blog_author_nickname!}",
+      "blogAuthorSite": "${settings.comment_blog_author_site!}",
       "blogAuthorEmail": "${settings.comment_blog_author_email!}",
       "blogAdminUserName": "${settings.comment_blog_admin_user_name!}",
       "assetsAddr": "${BASE_RES_URL}/source/lib/halo-comment"
