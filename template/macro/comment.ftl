@@ -19,7 +19,7 @@
       "avatarError": "${settings.comment_avatar_error!}",
       "notComment": "${settings.comment_empty_text!}",
       "blogAuthorEmail": "${settings.comment_blog_author_email!}",
-      "blogAdminUserName": "${settings.comment_blog_admin_user_name!}"
+      "blogAdminUserName": "${settings.comment_blog_admin_user_name!}",
       "assetsAddr": "${BASE_RES_URL}/source/lib/halo-comment"
     }'>
     <halo-comment id='${target.id?c}' type='${type}' configs='${configs}' options='${sys_options}'/>
