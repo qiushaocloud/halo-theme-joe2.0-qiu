@@ -3134,6 +3134,18 @@ comment:
           label: 开启
         - value: false
           label: 关闭
+    enable_comment_delete_to_recycle:
+      name: enable_comment_delete_to_recycle
+      label: 是否删除评论时放入回收站
+      type: switch
+      data-type: bool
+      default: true
+      description: "博主点击删除评论，是否只将评论放入回收站，如果为 true 则放入回收站，为 false 则永久删除"
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     comment_loading_style:
       name: comment_loading_style
       label: 评论加载样式

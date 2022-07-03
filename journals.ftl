@@ -72,6 +72,7 @@
                                 "showUserAgent": "${settings.enable_comment_ua?string}",
                                 "isAllowUploadAvatar": "${settings.enable_comment_upload_avatar?string}",
                                 "isGetIpLocation": "${settings.enable_comment_ip_location?string}",
+                                "isDelete2Recycle": "${settings.enable_comment_delete_to_recycle?string}",
                                 "gravatarSource": "${settings.gravatar_source!}",
                                 "loadingStyle": "${settings.comment_loading_style!}",
                                 "authorPopup": "${settings.comment_author_poptext!}",
