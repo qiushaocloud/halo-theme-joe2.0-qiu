@@ -3251,6 +3251,14 @@ comment:
       default: ""
       placeholder: 请输入上传图片的 github 授权 token
       description: "上传图片的 github 授权 token, 为‘’ 则使用作者的 cdn github 用户的授权token，默认为''【注：关于设置 token，请参考：https://www.qiushaocloud.top/2022/07/03/zhuan-zai-github-picgo.html】"
+    github_api_host:
+      name: github_api_host
+      label: github API 请求域名
+      type: text
+      default: "api.github.com"
+      placeholder: 请输入 github API 请求域名, 比如：api.github.com
+      description: "github API 请求域名，默认为: api.github.com 【注: 由于国内外墙的问题，您可以设置代理服务器，由代理服务器进行转发请求，例如：github-api-proxy.xxxx.top 或者 www.xxxx.top/github-api-proxy】"
+
 
 # 自定义
 custom:

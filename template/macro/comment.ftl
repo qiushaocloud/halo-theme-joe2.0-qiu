@@ -14,6 +14,7 @@
       "imgGithubUser": "${settings.img_github_user!}",
       "imgGithubRepo": "${settings.img_github_repo}",
       "imgGithubApiToken": "${settings.img_github_api_token!}",
+      "githubApiHost": "${settings.github_api_host!}",
       "gravatarSource": "${settings.gravatar_source!}",
       "loadingStyle": "${settings.comment_loading_style}",
       "authorPopup": "${settings.comment_author_poptext!}",
