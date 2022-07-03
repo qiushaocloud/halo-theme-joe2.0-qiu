@@ -3116,7 +3116,7 @@ comment:
       type: switch
       data-type: bool
       default: true
-      description: "点击头像框上传自定义头像【注：因为使用的是「即库图床」上传的头像，头像会在该地址(https://img.78al.net/index/gallery.html)上被所有人看到】"
+      description: "点击头像框上传自定义头像【注：配合 imgGithubUser、imgGithubRepo、imgGithubRepo 使用】"
       options:
         - value: true
           label: 开启
@@ -3230,6 +3230,27 @@ comment:
       default: ""
       placeholder: 请输入博客管理的用户名，比如：qiushaocloud
       description: "博客管理的用户名，配置后进行登录时免输入用户名"
+    img_github_user:
+      name: img_github_user
+      label: 上传图片的 github 用户名
+      type: text
+      default: ""
+      placeholder: 请输入上传图片的 github 用户名，比如：qiushaocloud-cdn
+      description: "上传图片的 github 用户名, 为‘’ 则使用作者的 cdn github 用户：qiushaocloud-cdn，默认为''"
+    img_github_repo:
+      name: img_github_repo
+      label: 上传图片的 github 仓库
+      type: text
+      default: ""
+      placeholder: 请输入上传图片的 github 仓库，比如：cdn_static
+      description: "上传图片的 github 仓库，为 ‘’ 则会自动生成仓库名：hcqcdnimgs_${year}_${month}，默认为''"
+    img_github_api_token:
+      name: img_github_api_token
+      label: 上传图片的 github 授权 token
+      type: text
+      default: ""
+      placeholder: 请输入上传图片的 github 授权 token
+      description: "上传图片的 github 授权 token, 为‘’ 则使用作者的 cdn github 用户的授权token，默认为''【注：关于设置 token，请参考：https://www.qiushaocloud.top/2022/07/03/zhuan-zai-github-picgo.html】"
 
 # 自定义
 custom:
