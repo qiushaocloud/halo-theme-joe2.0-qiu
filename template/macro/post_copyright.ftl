@@ -17,7 +17,7 @@
         </svg>
         <span>本文链接：</span>
         <span class="text">
-          <a class="link" href="${post_url!}" target="_blank" rel="noopener noreferrer nofollow">${blog_url!}${post_url!}</a>
+          <a class="link" href="${post_url!}" target="_blank" rel="noopener noreferrer nofollow">${post_url!}</a>
         </span>
         &nbsp;&nbsp;「如果您觉得博主本文对您有帮助，请随意赞赏哦」
       </div>
