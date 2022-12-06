@@ -59,7 +59,8 @@
     <link rel="stylesheet" href="${BASE_RES_URL}/source/cursor/style/min/${settings.cursor_skin!}.min.css?v=${theme.version!}">
   </#if>
 
-  <link rel="stylesheet" href="${theme_base!}/source/lib/font-awesome@4.7.0/font-awesome.min.css" media='all'>
+  <#--  <link rel="stylesheet" href="//gcore.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'>  -->
+  <link rel="stylesheet" href="${theme_base!}/source/lib/font-awesome@4.7.0/css/font-awesome.min.css" media='all'>
   <#--  <link rel="stylesheet" href="${BASE_RES_URL}/source/custom/qiushaocloud.css?v=${theme.version!}">  -->
   <link rel="stylesheet" href="${theme_base!}/source/custom/qiushaocloud.css?v=${theme.version!}">
 </#macro>
