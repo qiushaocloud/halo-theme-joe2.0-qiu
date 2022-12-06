@@ -1,5 +1,5 @@
 <div class="email-page" style="background:#fff;">
-  <#--  <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/css/min/joe.emoji.min.css">  -->
+  <#--  <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/css/min/joe.emoji.min.css">  -->
   <style>@media screen and (max-width:400px){.email-content{width:96%!important;}.email-title{padding:12px 14px!important;font-size:15px!important;}.email-title .icon{display:none;}.email-text{padding:20px 20px 0!important;}.email-text pre{margin:10px 0!important;}.email-footer{padding:10px!important;}}</style>
   <div class="email-content" style="width:90%;max-width:660px;margin:20px auto 30px;line-height:1.5;text-align:left;overflow:hidden;border-radius:8px;box-shadow:0 2px 12px 0 rgba(0,0,0,0.1);">
     <div style="overflow:hidden;">
@@ -21,8 +21,8 @@
       </div>
     </div>
   </div>
-  <#--  <script src="https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/lib/j-marked/marked.min.js"></script>
-  <script src="https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/js/min/joe.utils.min.js"></script>
+  <#--  <script src="https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/lib/j-marked/marked.min.js"></script>
+  <script src="https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/js/min/joe.utils.min.js"></script>
   <script>
     /* 渲染内容中的 emoji */
     var elms = document.querySelectorAll(".email-text pre");

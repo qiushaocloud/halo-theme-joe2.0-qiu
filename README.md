@@ -4,7 +4,7 @@
 
 <p align="center">
   <a class="logo" href="https://github.com/qiushaocloud/halo-theme-joe2.0-qiu">
-    <img src="https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/logo.png" style="width:30vw;min-width:260px;max-width:500px;" alt="halo-theme-joe2.0">
+    <img src="https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/logo.png" style="width:30vw;min-width:260px;max-width:500px;" alt="halo-theme-joe2.0">
   </a>
 </p>
 
@@ -40,10 +40,10 @@
 
 **效果图** 👇
 
-![效果图](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/mockup.jpg)
+![效果图](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/mockup.jpg)
 
-<!-- ![暗黑模式](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_dark.png)
-![浅色模式](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_light.png) -->
+<!-- ![暗黑模式](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_dark.png)
+![浅色模式](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_light.png) -->
 
 <br>
 
@@ -115,7 +115,7 @@
 
 > 此次修改对外暴露了大量的设置项，主要是为了最大程度方便用户对博客进行配置，详细设置项请参见主题根目录下的 `settings.yaml` 文件。
 
-![主题配置](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_config.png)
+![主题配置](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/shot_config.png)
 
 <br>
 
@@ -295,7 +295,7 @@
 <i class="joe-font joe-icon-xxx"></i>
 ```
 
-![菜单图标配置](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/menu.jpg)
+![菜单图标配置](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/menu.jpg)
 
 **如果你要用自己的图标，请往下看：**
 
@@ -315,7 +315,7 @@
 
 > Halo 后台目前支持配置 3 级及以上的菜单，当前主题已支持最多 3 级菜单。你需要到 `管理后台-外观-菜单` 中先建好要用的菜单，然后使用鼠标拖拽相应菜单，调整到你想要的顺序和结构（**上下拖动**是排序，**左右拖动**是改变层级，多尝试几次，不太灵敏）。
 
-![多级菜单](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/cascade_menu.png)
+![多级菜单](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/cascade_menu.png)
 
 #### 4、如果一个菜单有子菜单，如何禁止父菜单跳转？
 
@@ -335,7 +335,7 @@
 
 此时你可以通过 `管理后台-外观-菜单`，在相关菜单的标题前面添加 `#hide` 标志，然后保存即可（给父菜单添加后，子菜单也会隐藏）。
 
-![隐藏单个菜单](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/hide_menu.png)
+![隐藏单个菜单](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/hide_menu.png)
 
 #### 7、如何配置邮件服务？
 
@@ -394,7 +394,7 @@ Halo 已经提供好了邮件服务，我们只需要配置相关参数即可。
 
 - 如果想通过元数据来单独控制页面功能，可以到 `后台管理-文章-所有文章` 中找到要修改的文章，然后点击设置，再点击底部保存按钮旁的 `高级`，即可在弹框中对元数据进行配置，字段格式和主题配置是一致的，布尔值填 `true` 或 `false`，都是字符串形式。
 
-![文章详情页元数据配置](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/metas.png)
+![文章详情页元数据配置](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/metas.png)
 
 #### 12、如何支持数学公式和 Mermaid？
 
@@ -493,7 +493,7 @@ console.log("hello world!!!");
 
 有时候我们可能想在某一个自定义页面内部加入一些资源，单纯靠页面类型 `sheet` 无法进行区分。此时可以先进入 `后台管理系统`，并打开浏览器控制台，切换到 `network-Fetch/XHR` 这一栏，然后进入 `页面-所有页面-自定义页面`，此时控制面板中会出现相应的请求，查看数据获取页面对于的 `id`，这样我们就可以在模板中使用这个 `id` 区分不同的自定义页面了（可在 `sheet.ftl` 文件中通过 `sheet.id` 获取）。
 
-![自定义页面id](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/sheet_id.png)
+![自定义页面id](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/sheet_id.png)
 
 #### 18、如何查看博客后台日志？
 
@@ -535,7 +535,7 @@ location /upload/ {
   # 域名白名单，去掉则阻止所有非本站请求
   valid_referers none blocked server_names *.www.qiushaocloud.top 127.0.0.1 localhost ~\.google\. ~\.baidu\. ~\.qq\.;
   if ($invalid_referer) {
-    rewrite ^/ https://gcore.jsdelivr.net/gh/qinhua/cdn_assets/img/robber.jpg;
+    rewrite ^/ https://fastly.jsdelivr.net/gh/qinhua/cdn_assets/img/robber.jpg;
   }
   proxy_pass http://127.0.0.1:8090;
 }
@@ -573,7 +573,7 @@ location / {
 
 > 在页面没有大量图片和特效的场景下，各项性能指标都还不错。数据来自 `Chrome` 浏览器中的 `Lighthouse` 工具，仅供参考用。
 
-![页面性能报告](https://gcore.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/performance.png)
+![页面性能报告](https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/dp/performance.png)
 
 <br>
 
