@@ -1,4 +1,4 @@
-<img src="https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/logo.png" style="width:6vw;min-width:90px;" alt="Joe2.0">
+<img src="https://githubcdn.qiushaocloud.top/gh/qiushaocloud/halo-theme-joe2.0-qiu@master/source/img/logo.png" style="width:6vw;min-width:90px;" alt="Joe2.0">
 
 <!-- # **Joe2.0** -->
 

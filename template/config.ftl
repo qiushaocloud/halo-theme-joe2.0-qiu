@@ -16,9 +16,9 @@
 </script>
 
 <#assign mode = (blog_url?index_of("localhost") == -1 && blog_url?index_of("127.0.0.1") == -1)?then('production', 'development')>
-<#global BASE_RES_URL = (mode == "production" && settings.enable_cdn == true)?string("https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@" + theme.version, theme_base)>
-<#--  <#global BASE_RES_URL = (mode == "production" && settings.enable_cdn == true)?string("https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@master", theme_base)>  -->
-<#--  <#global BASE_RES_URL = (mode == "production" && settings.enable_cdn == true)?string("https://fastly.jsdelivr.net/gh/qiushaocloud/halo-theme-joe2.0-qiu@dev", theme_base)>  -->
+<#global BASE_RES_URL = (mode == "production" && settings.enable_cdn == true)?string("https://githubcdn.qiushaocloud.top/gh/qiushaocloud/halo-theme-joe2.0-qiu@" + theme.version, theme_base)>
+<#--  <#global BASE_RES_URL = (mode == "production" && settings.enable_cdn == true)?string("https://githubcdn.qiushaocloud.top/gh/qiushaocloud/halo-theme-joe2.0-qiu@master", theme_base)>  -->
+<#--  <#global BASE_RES_URL = (mode == "production" && settings.enable_cdn == true)?string("https://githubcdn.qiushaocloud.top/gh/qiushaocloud/halo-theme-joe2.0-qiu@dev", theme_base)>  -->
 <#global DEFAULT_LOGO = BASE_RES_URL + "/source/img/logo.png">
 <#global LOGO = (blog_logo?? && blog_logo != "")?then(blog_logo, DEFAULT_LOGO)>
 <#global USER_AVATAR = (user.avatar?? && user.avatar != '' && user.avatar?index_of("gravatar.com") == -1)?then(user.avatar, settings.default_avatar)>
