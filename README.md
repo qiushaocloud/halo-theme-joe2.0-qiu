@@ -47,6 +47,48 @@
 
 <br>
 
+### 关于为什么 将 cdn.jsdelivr.net 换成 githubcdn.qiushaocloud.top 的说明
+* 原因： cdn.jsdelivr.net 经常访问不到，而可能使用 gcore.jsdelivr.net/fastly.jsdelivr.net/testingcf.jsdelivr.net 则可能访问到，因此为了解决这个问题，这里由 githubcdn.qiushaocloud.top 进行301重定向到能访问的域名上，另外如果实在访问不了，自己也可以搭建代理服务器来走国外流量访问，只需要重定向到代理服务器即可
+* 实现的nginx配置如下
+```
+    server {
+        listen       80;
+        server_name  githubcdn.qiushaocloud.top;
+
+        location / {
+            rewrite ^/(.*)$ http://testingcf.jsdelivr.net/$1 permanent;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   http_html;
+        }
+    }
+
+
+    server {
+        listen       443 ssl;
+        server_name  githubcdn.qiushaocloud.top;
+
+        #ssl on;
+        ssl_certificate       /usr/local/nginx/cert/githubcdn.qiushaocloud.top_nginx/githubcdn.qiushaocloud.top_bundle.pem;
+        ssl_certificate_key   /usr/local/nginx/cert/githubcdn.qiushaocloud.top_nginx/githubcdn.qiushaocloud.top.key;
+        ssl_protocols         SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers           HIGH:!aNULL:!MD5;
+#       ssl_session_cache     shared:SSL:20m;
+        ssl_session_timeout   4h;
+
+        location / {
+            rewrite ^/(.*)$ https://testingcf.jsdelivr.net/$1 permanent;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   http_html;
+        }
+    }
+```
+
 ### 邱少羽梦修改内容
 1. 添加点击量以及访客量的统计，支持今日统计
 2. 添加留言板模版以及关于博主模版
