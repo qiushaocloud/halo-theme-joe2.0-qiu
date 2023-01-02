@@ -87,7 +87,7 @@
         </a>
       </li>
       <li class="joe_detail__friends-item">
-        <a class="contain" href="https://www.qiushaocloud.top/gitlab/qiushaocloud" target="_blank" style="background:linear-gradient(to right, #fa709a 0%, #fee140 100%)" rel="noopener noreferrer">
+        <a class="contain" href="https://gitlab.qiushaocloud.top/qiushaocloud" target="_blank" style="background:linear-gradient(to right, #fa709a 0%, #fee140 100%)" rel="noopener noreferrer">
           <span class="title">博主自建 Gitlab</span>
           <div class="content">
             <div class="desc" title="博主自建的 Gitlab ，希望能帮助到您">博主自建的 Gitlab ，希望能帮助到您</div>
